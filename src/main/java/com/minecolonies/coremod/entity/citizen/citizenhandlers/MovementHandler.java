@@ -58,7 +58,7 @@ public class MovementHandler extends MovementController
             final PathNavigator pathnavigator = this.mob.getNavigator();
 
             final NodeProcessor nodeprocessor = pathnavigator.getNodeProcessor();
-            if (nodeprocessor.getPathNodeType(this.mob.world,
+            if (nodeprocessor.getFloorNodeType(this.mob.world,
               MathHelper.floor(this.mob.getPosX() + (double) rot1),
               MathHelper.floor(this.mob.getPosY()),
               MathHelper.floor(this.mob.getPosZ() + (double) rot2)) != PathNodeType.WALKABLE)

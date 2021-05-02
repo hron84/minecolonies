@@ -63,7 +63,7 @@ public class CustomArrowEntity extends ArrowEntity
             final Entity player = traceResult.getEntity();
             if (player instanceof PlayerEntity)
             {
-                Entity shooter = this.func_234616_v_();
+                Entity shooter = this.getShooter();
                 DamageSource source;
                 if (shooter == null)
                 {

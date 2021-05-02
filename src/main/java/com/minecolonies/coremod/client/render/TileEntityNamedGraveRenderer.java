@@ -111,7 +111,7 @@ public class TileEntityNamedGraveRenderer extends TileEntityRenderer<TileEntityN
             final FontRenderer fontRenderer = this.renderDispatcher.getFontRenderer();
 
             float x = (float) (-fontRenderer.func_243245_a(iReorderingProcessor) / 2); //render width of text divided by 2
-            fontRenderer.func_238416_a_(iReorderingProcessor, x, line * 10f,
+            fontRenderer.drawEntityText(iReorderingProcessor, x, line * 10f,
                     textColor, false, matrixStack.getLast().getMatrix(), buffer, false, 0, combinedLight);
         }
     }

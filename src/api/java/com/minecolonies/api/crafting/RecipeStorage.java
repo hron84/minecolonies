@@ -113,7 +113,7 @@ public class RecipeStorage implements IRecipeStorage
      * The loot parameter set definition
      */
     public static final LootParameterSet recipeLootParameters = (new LootParameterSet.Builder())
-                .required(LootParameters.field_237457_g_)
+                .required(LootParameters.ORIGIN)
                 .required(LootParameters.THIS_ENTITY)
                 .required(LootParameters.TOOL)
                 .optional(LootParameters.DAMAGE_SOURCE)

@@ -487,7 +487,6 @@ public class WindowBannerPicker extends Screen
             drawBannerPattern(this.pattern, this.x, this.y);
         }
 
-        @Override
         public void renderButton(final MatrixStack stack, int p_renderButton_1_, int p_renderButton_2_, float p_renderButton_3_)
         {
             if (this.visible)

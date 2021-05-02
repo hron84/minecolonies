@@ -87,11 +87,11 @@ public class WindowHutUniversityModule extends AbstractWindowWorkerModuleBuildin
                     // We'll include even completed partial components in the requirement list.
                     if (!req.isFulfilled(building.getColony()))
                     {
-                        requirements.add(new StringTextComponent("-").append(req.getDesc().setStyle((Style.EMPTY).setFormatting(TextFormatting.RED))));
+                        requirements.add(new StringTextComponent("-").appendSibling(req.getDesc().setStyle((Style.EMPTY).setFormatting(TextFormatting.RED))));
                     }
                     else
                     {
-                        requirements.add(new StringTextComponent("-").append(req.getDesc().setStyle((Style.EMPTY).setFormatting(TextFormatting.AQUA))));
+                        requirements.add(new StringTextComponent("-").appendSibling(req.getDesc().setStyle((Style.EMPTY).setFormatting(TextFormatting.AQUA))));
                     }
                 }
             }

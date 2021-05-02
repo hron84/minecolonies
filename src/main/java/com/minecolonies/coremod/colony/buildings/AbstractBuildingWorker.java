@@ -293,7 +293,7 @@ public abstract class AbstractBuildingWorker extends AbstractBuilding implements
         final int luck = (int)(((primarySkill + 1) * 2) - Math.pow((primarySkill + 1 ) / 10.0, 2));
 
         LootContext.Builder builder =  (new LootContext.Builder((ServerWorld) this.getColony().getWorld())
-        .withParameter(LootParameters.field_237457_g_, worker.getPositionVec())
+        .withParameter(LootParameters.ORIGIN, worker.getPositionVec())
         .withParameter(LootParameters.THIS_ENTITY, worker)
         .withParameter(LootParameters.TOOL, worker.getHeldItemMainhand())
         .withRandom(worker.getRandom())

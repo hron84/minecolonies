@@ -207,7 +207,7 @@ public class ResearchManager implements IResearchManager
             for (PlayerEntity player : colony.getMessagePlayerEntities())
             {
                 player.sendMessage(new TranslationTextComponent(TranslationConstants.RESEARCH_AVAILABLE, research.getName())
-                                     .append(new TranslationTextComponent("com.minecolonies.coremod.research.started",
+                                     .appendSibling(new TranslationTextComponent("com.minecolonies.coremod.research.started",
                                       research.getName())),
                   player.getUniqueID());
                 SoundUtils.playSuccessSound(player, player.getPosition());

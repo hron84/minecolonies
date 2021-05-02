@@ -31,7 +31,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
-import java.util.Map;
 import java.util.Random;
 import java.util.function.BiPredicate;
 
@@ -446,7 +445,7 @@ public final class BlockPosUtil
     {
         return world.getBlockState(coords).getDrops(new LootContext.Builder((ServerWorld) world)
                                                       .withLuck(fortune)
-                                                      .withParameter(LootParameters.field_237457_g_, entity.getPositionVec())
+                                                      .withParameter(LootParameters.ORIGIN, entity.getPositionVec())
                                                       .withParameter(LootParameters.TOOL, stack));
     }
 

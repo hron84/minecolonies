@@ -115,7 +115,7 @@ public class CommandListColonies implements IMCCommand
         final StringTextComponent beginLine = new StringTextComponent(PAGE_LINE);
         final StringTextComponent endLine = new StringTextComponent(PAGE_LINE);
         context.getSource()
-          .sendFeedback(beginLine.append(prevButton).append(new StringTextComponent(PAGE_LINE_DIVIDER)).append(nextButton).append(endLine), true);
+          .sendFeedback(beginLine.appendSibling(prevButton).appendSibling(new StringTextComponent(PAGE_LINE_DIVIDER)).appendSibling(nextButton).appendSibling(endLine), true);
         return 1;
     }
 

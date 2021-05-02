@@ -101,7 +101,7 @@ public class EntityAIBreakDoor extends BreakDoorGoal
               hardness / (1 + (entity.world.getLoadedEntitiesWithinAABB(AbstractEntityMinecoloniesMob.class, entity.getBoundingBox().grow(5)).size() / fasterBreakPerXNearby)));
         }
 
-        if (this.breakingTime == this.func_220697_f() - 1)
+        if (this.breakingTime == this.getNormalizedBreakTime() - 1)
         {
             final BlockState toBreak = entity.world.getBlockState(doorPosition);
             if (toBreak.getBlock() instanceof AbstractBlockGate)

@@ -187,7 +187,7 @@ public abstract class AbstractShipRaidEvent implements IColonyRaidEvent, IColony
     protected void updateRaidBar()
     {
         final String directionName = BlockPosUtil.calcDirection(colony.getCenter(), spawnPoint);
-        raidBar.setName(getDisplayName().append(new StringTextComponent(" - " + directionName)));
+        raidBar.setName(getDisplayName().appendSibling(new StringTextComponent(" - " + directionName)));
         for (final PlayerEntity player : colony.getPackageManager().getCloseSubscribers())
         {
             raidBar.addPlayer((ServerPlayerEntity) player);

@@ -467,7 +467,7 @@ public abstract class AbstractEntityAICrafting<J extends AbstractJobCrafter<?, J
         }
 
         LootContext.Builder builder =  (new LootContext.Builder((ServerWorld) this.world))
-        .withParameter(LootParameters.field_237457_g_, worker.getPositionVec())
+        .withParameter(LootParameters.ORIGIN, worker.getPositionVec())
         .withParameter(LootParameters.THIS_ENTITY, worker)
         .withParameter(LootParameters.TOOL, worker.getHeldItemMainhand())
         .withRandom(worker.getRandom())

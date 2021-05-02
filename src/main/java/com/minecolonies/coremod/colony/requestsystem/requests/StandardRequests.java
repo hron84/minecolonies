@@ -74,8 +74,8 @@ public final class StandardRequests
         public ITextComponent getShortDisplayString()
         {
             final IFormattableTextComponent combined = new NonSiblingFormattingTextComponent();
-            combined.append(new StringTextComponent(getRequest().getCount() + " "));
-            combined.append(getRequest().getStack().getDisplayName());
+            combined.appendSibling(new StringTextComponent(getRequest().getCount() + " "));
+            combined.appendSibling(getRequest().getStack().getDisplayName());
             return combined;
         }
 
@@ -136,7 +136,7 @@ public final class StandardRequests
         public ITextComponent getShortDisplayString()
         {
             final IFormattableTextComponent result = new NonSiblingFormattingTextComponent();
-            result.append(new TranslationTextComponent(stackList.getDescription()));
+            result.appendSibling(new TranslationTextComponent(stackList.getDescription()));
             return result;
         }
 
@@ -185,7 +185,7 @@ public final class StandardRequests
         public ITextComponent getShortDisplayString()
         {
             final IFormattableTextComponent combined = new NonSiblingFormattingTextComponent();
-            combined.append(new StringTextComponent(getRequest().getCount() + " "));
+            combined.appendSibling(new StringTextComponent(getRequest().getCount() + " "));
             // getRequest().getTag() is a long string that can't be easily be read by players or turned into a translation key.
             // Instead, try to get a translated text first.
             final String tagKey = "com.minecolonies.coremod.tag." + getRequest().getTag().toString().toLowerCase().replace
@@ -194,16 +194,16 @@ public final class StandardRequests
             // test the translated text; if there's a difference, the client has a matching translation key.
             if (!tagText.getUnformattedComponentText().equals(tagKey))
             {
-                combined.append(new StringTextComponent("#").append(tagText));
+                combined.appendSibling(new StringTextComponent("#").appendSibling(tagText));
             }
             // Otherwise, use the first item from request set if present, or the full tag identifier to assist debugging otherwise.
             else if (!stacks.isEmpty())
             {
-                combined.append(new StringTextComponent("#").append(stacks.get(0).getDisplayName()));
+                combined.appendSibling(new StringTextComponent("#").appendSibling(stacks.get(0).getDisplayName()));
             }
             else
             {
-                combined.append(new StringTextComponent("#").append(new StringTextComponent(getRequest().getTag().toString())));
+                combined.appendSibling(new StringTextComponent("#").appendSibling(new StringTextComponent(getRequest().getTag().toString())));
             }
             return combined;
         }
@@ -239,8 +239,8 @@ public final class StandardRequests
         public ITextComponent getShortDisplayString()
         {
             final IFormattableTextComponent result = new NonSiblingFormattingTextComponent();
-            result.append(new TranslationTextComponent(TranslationConstants.COM_MINECOLONIES_REQUESTS_DELIVERY).append(new StringTextComponent(
-              getRequest().getStack().getCount() + " ")).append(getRequest().getStack().getTextComponent()));
+            result.appendSibling(new TranslationTextComponent(TranslationConstants.COM_MINECOLONIES_REQUESTS_DELIVERY).appendSibling(new StringTextComponent(
+              getRequest().getStack().getCount() + " ")).appendSibling(getRequest().getStack().getTextComponent()));
             return result;
         }
 
@@ -315,7 +315,7 @@ public final class StandardRequests
         public ITextComponent getShortDisplayString()
         {
             final IFormattableTextComponent result = new NonSiblingFormattingTextComponent();
-            result.append(new TranslationTextComponent(TranslationConstants.COM_MINECOLONIES_REQUESTS_PICKUP));
+            result.appendSibling(new TranslationTextComponent(TranslationConstants.COM_MINECOLONIES_REQUESTS_PICKUP));
             return result;
         }
 
@@ -518,28 +518,28 @@ public final class StandardRequests
             final IFormattableTextComponent result = new NonSiblingFormattingTextComponent();
             final IFormattableTextComponent preType = new TranslationTextComponent(TranslationConstants.COM_MINECOLONIES_REQUESTS_TOOL_PRETYPE);
 
-            result.append(preType);
+            result.appendSibling(preType);
 
-            result.append(getRequest().getToolClass().getDisplayName());
+            result.appendSibling(getRequest().getToolClass().getDisplayName());
 
             if (getRequest().getMinLevel() > ToolLevelConstants.TOOL_LEVEL_HAND)
             {
-                result.append(new StringTextComponent(" "));
-                result.append(new TranslationTextComponent(TranslationConstants.COM_MINECOLONIES_REQUESTS_TOOL_PREMINLEVEL));
-                result.append(new StringTextComponent(getRequest().isArmor() ? ItemStackUtils.swapArmorGrade(getRequest().getMinLevel()) : ItemStackUtils.swapToolGrade(getRequest().getMinLevel())));
+                result.appendSibling(new StringTextComponent(" "));
+                result.appendSibling(new TranslationTextComponent(TranslationConstants.COM_MINECOLONIES_REQUESTS_TOOL_PREMINLEVEL));
+                result.appendSibling(new StringTextComponent(getRequest().isArmor() ? ItemStackUtils.swapArmorGrade(getRequest().getMinLevel()) : ItemStackUtils.swapToolGrade(getRequest().getMinLevel())));
             }
 
             if (getRequest().getMaxLevel() < ToolLevelConstants.TOOL_LEVEL_MAXIMUM)
             {
                 if (getRequest().getMinLevel() > ToolLevelConstants.TOOL_LEVEL_HAND)
                 {
-                    result.append(new StringTextComponent(" "));
-                    result.append(new TranslationTextComponent(TranslationConstants.COM_MINECOLONIES_GENERAL_AND));
+                    result.appendSibling(new StringTextComponent(" "));
+                    result.appendSibling(new TranslationTextComponent(TranslationConstants.COM_MINECOLONIES_GENERAL_AND));
                 }
 
-                result.append(new StringTextComponent(" "));
-                result.append(new TranslationTextComponent(TranslationConstants.COM_MINECOLONIES_REQUESTS_TOOL_PREMAXLEVEL));
-                result.append(new StringTextComponent(getRequest().isArmor() ? ItemStackUtils.swapArmorGrade(getRequest().getMaxLevel()) : ItemStackUtils.swapToolGrade(getRequest().getMaxLevel())));
+                result.appendSibling(new StringTextComponent(" "));
+                result.appendSibling(new TranslationTextComponent(TranslationConstants.COM_MINECOLONIES_REQUESTS_TOOL_PREMAXLEVEL));
+                result.appendSibling(new StringTextComponent(getRequest().isArmor() ? ItemStackUtils.swapArmorGrade(getRequest().getMaxLevel()) : ItemStackUtils.swapToolGrade(getRequest().getMaxLevel())));
             }
 
             return result;
@@ -550,7 +550,7 @@ public final class StandardRequests
         public ITextComponent getShortDisplayString()
         {
             final IFormattableTextComponent result = new NonSiblingFormattingTextComponent();
-            result.append(getRequest().getToolClass().getDisplayName());
+            result.appendSibling(getRequest().getToolClass().getDisplayName());
             return result;
         }
     }
@@ -584,7 +584,7 @@ public final class StandardRequests
         public ITextComponent getShortDisplayString()
         {
             final IFormattableTextComponent result = new NonSiblingFormattingTextComponent();
-            result.append(new TranslationTextComponent(TranslationConstants.COM_MINECOLONIES_REQUESTS_FOOD));
+            result.appendSibling(new TranslationTextComponent(TranslationConstants.COM_MINECOLONIES_REQUESTS_FOOD));
             return result;
         }
 
@@ -690,7 +690,7 @@ public final class StandardRequests
         public ITextComponent getShortDisplayString()
         {
             final IFormattableTextComponent result = new NonSiblingFormattingTextComponent();
-            result.append(new TranslationTextComponent(TranslationConstants.COM_MINECOLONIES_REQUESTS_BURNABLE));
+            result.appendSibling(new TranslationTextComponent(TranslationConstants.COM_MINECOLONIES_REQUESTS_BURNABLE));
             return result;
         }
 

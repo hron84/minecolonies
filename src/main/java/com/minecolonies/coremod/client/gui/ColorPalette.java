@@ -88,7 +88,6 @@ public class ColorPalette
             super.render(stack, mouseX, mouseY, partialTicks);
         }
 
-        @Override
         public void renderButton(final MatrixStack stack, int mouseX, int mouseY, float partialTicks)
         {
             int color = this.color.getColorValue();

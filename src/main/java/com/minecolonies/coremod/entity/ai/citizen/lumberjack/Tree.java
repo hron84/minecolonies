@@ -302,7 +302,7 @@ public class Tree
             list.addAll(state.getDrops(new LootContext.Builder(world)
                                          .withParameter(LootParameters.TOOL,
                                            new ItemStack(Items.WOODEN_AXE)).withLuck(100)
-                                         .withParameter(LootParameters.field_237457_g_, new Vector3d(position.getX(), position.getY(), position.getZ()))));
+                                         .withParameter(LootParameters.ORIGIN, new Vector3d(position.getX(), position.getY(), position.getZ()))));
             if (!list.isEmpty())
             {
                 for (ItemStack stack : list)

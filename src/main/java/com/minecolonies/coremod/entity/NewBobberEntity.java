@@ -494,7 +494,7 @@ public class NewBobberEntity extends Entity implements IEntityAdditionalSpawnDat
             else if (this.ticksCatchable > 0)
             {
                 LootContext.Builder lootcontext$builder = (new LootContext.Builder((ServerWorld)this.world))
-                                                            .withParameter(LootParameters.field_237457_g_, this.getPositionVec())
+                                                            .withParameter(LootParameters.ORIGIN, this.getPositionVec())
                                                             .withParameter(LootParameters.TOOL, this.getAngler().getHeldItemMainhand())
                                                             .withParameter(LootParameters.THIS_ENTITY, this)
                                                             .withRandom(this.rand)

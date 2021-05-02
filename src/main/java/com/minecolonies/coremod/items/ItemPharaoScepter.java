@@ -130,7 +130,7 @@ public class ItemPharaoScepter extends BowItem
     @Override
     public AbstractArrowEntity customArrow(@NotNull AbstractArrowEntity arrow)
     {
-        AbstractArrowEntity entity = ((ArrowItem) ModItems.firearrow).createArrow(arrow.world, new ItemStack(ModItems.firearrow, 1), (LivingEntity) arrow.func_234616_v_());
+        AbstractArrowEntity entity = ((ArrowItem) ModItems.firearrow).createArrow(arrow.world, new ItemStack(ModItems.firearrow, 1), (LivingEntity) arrow.getShooter());
         entity.pickupStatus = AbstractArrowEntity.PickupStatus.DISALLOWED;
         entity.setFire(3);
 

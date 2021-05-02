@@ -468,7 +468,7 @@ public class EntityAIInteractToggleAble extends Goal
         @Override
         public void toggleBlock(final BlockState state, final World world, final BlockPos pos)
         {
-            WorldUtil.setBlockState(world, pos, state.func_235896_a_(BlockStateProperties.OPEN));
+            WorldUtil.setBlockState(world, pos, state.cycleValue(BlockStateProperties.OPEN));
         }
 
         @Override
@@ -492,7 +492,7 @@ public class EntityAIInteractToggleAble extends Goal
         @Override
         public void toggleBlock(final BlockState state, final World world, final BlockPos pos)
         {
-            WorldUtil.setBlockState(world, pos, state.func_235896_a_(BlockStateProperties.OPEN));
+            WorldUtil.setBlockState(world, pos, state.cycleValue(BlockStateProperties.OPEN));
         }
 
         @Override

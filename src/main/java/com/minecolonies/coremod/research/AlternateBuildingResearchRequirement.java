@@ -1,9 +1,6 @@
 package com.minecolonies.coremod.research;
 
 import com.minecolonies.api.colony.IColony;
-import com.minecolonies.api.colony.IColonyView;
-import com.minecolonies.api.colony.buildings.IBuilding;
-import com.minecolonies.api.colony.buildings.views.IBuildingView;
 import com.minecolonies.api.research.IResearchRequirement;
 import com.minecolonies.api.research.ModResearchRequirements;
 import com.minecolonies.api.research.registry.ResearchRequirementEntry;
@@ -112,12 +109,12 @@ public class AlternateBuildingResearchRequirement implements IResearchRequiremen
         while (iterator.hasNext())
         {
             final Map.Entry<String, Integer> kvp = iterator.next();
-            requirementList.append(new TranslationTextComponent("com.minecolonies.coremod.research.requirement.building.level",
+            requirementList.appendSibling(new TranslationTextComponent("com.minecolonies.coremod.research.requirement.building.level",
               new TranslationTextComponent("block.minecolonies.blockhut" + kvp.getKey()),
               kvp.getValue()));
             if (iterator.hasNext())
             {
-                requirementList.append(new TranslationTextComponent("com.minecolonies.coremod.research.requirement.building.or"));
+                requirementList.appendSibling(new TranslationTextComponent("com.minecolonies.coremod.research.requirement.building.or"));
             }
         }
         return requirementList;

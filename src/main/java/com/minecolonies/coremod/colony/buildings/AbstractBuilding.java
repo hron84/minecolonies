@@ -1818,7 +1818,7 @@ public abstract class AbstractBuilding extends AbstractBuildingContainer
         final int citizenId = getCitizensByRequest().get(request.getId());
         final ICitizenData citizenData = getColony().getCitizenManager().getCivilian(citizenId);
         final IFormattableTextComponent jobName =  new TranslationTextComponent(citizenData.getJob().getName().toLowerCase());
-        return jobName.append(new StringTextComponent(" " + citizenData.getName()));
+        return jobName.appendSibling(new StringTextComponent(" " + citizenData.getName()));
     }
 
     @Override

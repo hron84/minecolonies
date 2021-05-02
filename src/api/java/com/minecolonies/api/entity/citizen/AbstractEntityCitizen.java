@@ -305,7 +305,6 @@ public abstract class AbstractEntityCitizen extends AbstractCivilianEntity imple
      * @return the child.
      */
     @Nullable
-    @Override
     public AgeableEntity func_241840_a(final ServerWorld world, final AgeableEntity parent)
     {
         return null;

@@ -146,10 +146,10 @@ public class CommandCitizenList implements IMCColonyOfficerCommand
         final IFormattableTextComponent beginLine = LanguageHandler.buildChatComponent("com.minecolonies.command.citizenlist.pageline");
         final IFormattableTextComponent endLine = LanguageHandler.buildChatComponent("com.minecolonies.command.citizenlist.pageline");
 
-        context.getSource().sendFeedback(beginLine.append(prevButton)
-                                           .append(LanguageHandler.buildChatComponent("com.minecolonies.command.citizenlist.pagestyle"))
-                                           .append(nextButton)
-                                           .append(endLine), true);
+        context.getSource().sendFeedback(beginLine.appendSibling(prevButton)
+                                           .appendSibling(LanguageHandler.buildChatComponent("com.minecolonies.command.citizenlist.pagestyle"))
+                                           .appendSibling(nextButton)
+                                           .appendSibling(endLine), true);
     }
 
     /**
